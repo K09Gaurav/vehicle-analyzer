@@ -22,11 +22,11 @@ public class Vehicle {
     
     @Id
     @GeneratedValue
-    private String ID;
+    private int  ID;
     
     private String Manufacturer;
     private String Model;
-    private String Year;
+    private int Year;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "VehicleType")
@@ -34,7 +34,9 @@ public class Vehicle {
 
     
 
-    public Vehicle(String manufacturer, String model, String year, VehicleTypes type) {
+    
+
+    public Vehicle(String manufacturer, String model, int year, VehicleTypes type) {
         Manufacturer = manufacturer;
         Model = model;
         Year = year;
@@ -44,7 +46,7 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
@@ -64,11 +66,11 @@ public class Vehicle {
         Model = model;
     }
 
-    public String getYear() {
+    public int getYear() {
         return Year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         Year = year;
     }
 
