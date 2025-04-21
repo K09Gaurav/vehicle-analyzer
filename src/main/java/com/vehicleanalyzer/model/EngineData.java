@@ -3,7 +3,6 @@ package com.vehicleanalyzer.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +13,5 @@ public class EngineData {
     @GeneratedValue
     private int engineId;
 
-    @OneToMany
-    private String VehicleID;
+
 }

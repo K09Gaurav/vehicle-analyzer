@@ -1,4 +1,4 @@
-package com.vehicleanalyzer.model;
+package com.vehicleanalyzer.model.enums;
 
 public enum VehicleTypes {
     TwoWheeler,
