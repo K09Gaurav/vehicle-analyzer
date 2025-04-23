@@ -13,11 +13,10 @@
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
 	
-	<!-- <mapping class="com.vehicleanalyzer.model.EngineData"/>
+	<mapping class="com.vehicleanalyzer.model.EngineData"/>
 	<mapping class="com.vehicleanalyzer.model.FuelData"/>
-	<mapping class="com.vehicleanalyzer.model.VehicleData"/> -->
+	<mapping class="com.vehicleanalyzer.model.Vehicle"/>
 
-	<!-- <property name="hibernate.packagesToScan">com.vehicleanalyzer.model</property> -->
 
 
 

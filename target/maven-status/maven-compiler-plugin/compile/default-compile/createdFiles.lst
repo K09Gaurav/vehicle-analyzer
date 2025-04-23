@@ -1,0 +1,14 @@
+com\vehicleanalyzer\dao\EngineDataDAO.class
+com\vehicleanalyzer\util\HibernateUtil.class
+com\vehicleanalyzer\dao\VehicleDAO.class
+com\vehicleanalyzer\servlet\VehicleDashboardServlet.class
+com\vehicleanalyzer\dao\FuelDataDAO.class
+com\vehicleanalyzer\model\FuelData.class
+com\vehicleanalyzer\model\Vehicle.class
+com\vehicleanalyzer\servlet\FuelDataServlet.class
+com\vehicleanalyzer\model\enums\VehicleTypes.class
+com\vehicleanalyzer\model\EngineData.class
+com\vehicleanalyzer\servlet\EngineDataServlet.class
+com\vehicleanalyzer\model\enums\EngineType.class
+com\vehicleanalyzer\servlet\AddVehicleServlet.class
+com\vehicleanalyzer\model\enums\FuelType.class
