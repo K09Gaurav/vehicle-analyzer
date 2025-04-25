@@ -45,13 +45,13 @@ public class HibernateUtil {
         }
     }
     
-    public static void main(String[] args) {
-        // Test the HibernateUtil class
-        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-        if (sessionFactory != null) {
-            System.out.println("SessionFactory created successfully!");
-        } else {
-            System.out.println("Failed to create SessionFactory.");
-        }
-    }
+    // public static void main(String[] args) {
+    //     // Test the HibernateUtil class
+    //     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    //     if (sessionFactory != null) {
+    //         System.out.println("SessionFactory created successfully!");
+    //     } else {
+    //         System.out.println("Failed to create SessionFactory.");
+    //     }
+    // }
 }
