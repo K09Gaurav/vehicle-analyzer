@@ -18,7 +18,7 @@ public class Vehicle {
 
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
 
     private String Manufacturer;
     private String Model;
@@ -97,15 +97,15 @@ public class Vehicle {
         Fuel_Type = fuel_Type;
     }
 
-    public Long getId() {
-        return Id;
+    public Long getid() {
+        return id;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Vehicle{");
-        sb.append("Id=").append(Id);
+        sb.append("id=").append(id);
         sb.append(", Manufacturer=").append(Manufacturer);
         sb.append(", Model=").append(Model);
         sb.append(", year_of_Mfg=").append(year_of_Mfg);

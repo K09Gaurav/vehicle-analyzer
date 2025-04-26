@@ -22,7 +22,7 @@ public class EngineData {
     private Vehicle vehicle;
 
     private int RPM;
-    private float Temperature;
+    private double  Temperature;
 
     private LocalDateTime timestamp;
 
@@ -52,7 +52,7 @@ public class EngineData {
         RPM = rPM;
     }
 
-    public float getTemperature() {
+    public double  getTemperature() {
         return Temperature;
     }
 

@@ -9,4 +9,5 @@ public interface EngineDataDAO {
     void saveEngineData(EngineData engineData);
     List<EngineData> getEngineDataByVehicleId(Long vehicleId);
     double getAverageRPMByVehicleId(Long vehicleId);
+    double getAverageTemperatureByVehicleId(Long vehicleId);
 }
