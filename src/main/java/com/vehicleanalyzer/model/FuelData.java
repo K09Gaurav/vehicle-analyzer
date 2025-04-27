@@ -21,14 +21,14 @@ public class FuelData {
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
-    private float liters_used;
-    private float Distance_km;
+    private double liters_used;
+    private double distance_km;
     private LocalDateTime timestamp;
 
     public FuelData(Vehicle vehicle, float liters_used, float distance_km, LocalDateTime timestamp) {
         this.vehicle = vehicle;
         this.liters_used = liters_used;
-        Distance_km = distance_km;
+        this.distance_km = distance_km;
         this.timestamp = timestamp;
     }
 
@@ -39,7 +39,7 @@ public class FuelData {
         return vehicle;
     }
 
-    public float getLiters_used() {
+    public double getLiters_used() {
         return liters_used;
     }
 
@@ -47,12 +47,12 @@ public class FuelData {
         this.liters_used = liters_used;
     }
 
-    public float getDistance_km() {
-        return Distance_km;
+    public double getdistance_km() {
+        return distance_km;
     }
 
-    public void setDistance_km(float distance_km) {
-        Distance_km = distance_km;
+    public void setdistance_km(float distance_km) {
+        this.distance_km = distance_km;
     }
 
     public LocalDateTime getTimestamp() {
@@ -69,8 +69,8 @@ public class FuelData {
 
     @Override
     public String toString() {
-        return "FuelData [fuelId=" + fuelId + ", vehicle=" + vehicle + ", liters_used=" + liters_used + ", Distance_km="
-                + Distance_km + ", timestamp=" + timestamp + "]";
+        return "FuelData [fuelId=" + fuelId + ", vehicle=" + vehicle + ", liters_used=" + liters_used + ", distance_km="
+                + distance_km + ", timestamp=" + timestamp + "]";
     }
 
        

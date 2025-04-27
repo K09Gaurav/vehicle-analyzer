@@ -62,4 +62,74 @@ public class VehicleTest {
     public void testToString() {
 
     }
+
+    @Test
+    public void testGetEngine_Type() {
+        
+    }
+
+    @Test
+    public void testGetFuel_Type() {
+        
+    }
+
+    @Test
+    public void testGetManufacturer2() {
+        
+    }
+
+    @Test
+    public void testGetModel2() {
+        
+    }
+
+    @Test
+    public void testGetType2() {
+        
+    }
+
+    @Test
+    public void testGetYear_of_Mfg() {
+        
+    }
+
+    @Test
+    public void testGetid() {
+        
+    }
+
+    @Test
+    public void testSetEngine_Type() {
+        
+    }
+
+    @Test
+    public void testSetFuel_Type() {
+        
+    }
+
+    @Test
+    public void testSetManufacturer2() {
+        
+    }
+
+    @Test
+    public void testSetModel2() {
+        
+    }
+
+    @Test
+    public void testSetType2() {
+        
+    }
+
+    @Test
+    public void testSetYear_of_Mfg() {
+        
+    }
+
+    @Test
+    public void testToString2() {
+        
+    }
 }
