@@ -6,7 +6,7 @@ import com.vehicleanalyzer.model.Vehicle;
 
 public interface VehicleDAO {
     //create
-    void saveVehicle(Vehicle vehicle);
+    Long saveVehicle(Vehicle vehicle);
     //read
     List<Vehicle> getAllVehicles();
     Vehicle getVehicleById(Long id);
@@ -15,5 +15,6 @@ public interface VehicleDAO {
     void updateVehicle(Vehicle vehicle);
 
     //delete
-    void deleteVehicle(Long id);
+    void deleteVehicle(Vehicle vehicle);
+    void deleteVehicleById(Long id);
 }

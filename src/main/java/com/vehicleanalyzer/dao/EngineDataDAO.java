@@ -13,10 +13,11 @@ public interface EngineDataDAO {
     List<EngineData> getEngineDataByVehicleId(Long vehicleId);
     double getAverageRPMByVehicleId(Long vehicleId);
     double getAverageTemperatureByVehicleId(Long vehicleId);
+    EngineData findById(Long engineId);
     
     //update
     void updateEngineData(EngineData engineData);
 
     //delete
-    void deleteEngineData(Long id);
+    void deleteEngineDataByEngineId(Long engineId);
 }
