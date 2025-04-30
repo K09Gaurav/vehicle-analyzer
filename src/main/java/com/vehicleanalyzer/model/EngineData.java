@@ -56,7 +56,7 @@ public class EngineData {
         return Temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(double temperature) {
         Temperature = temperature;
     }
 
@@ -72,6 +72,14 @@ public class EngineData {
     public String toString() {
         return "EngineData [engineId=" + engineId + ", vehicle=" + vehicle + ", RPM=" + RPM + ", Temperature="
                 + Temperature + ", timestamp=" + timestamp + "]";
+    }
+
+    public void setEngineId(Long engineId) {
+        this.engineId = engineId;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     

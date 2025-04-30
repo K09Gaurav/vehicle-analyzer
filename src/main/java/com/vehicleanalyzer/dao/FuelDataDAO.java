@@ -1,8 +1,10 @@
 package com.vehicleanalyzer.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.vehicleanalyzer.model.FuelData;
+import com.vehicleanalyzer.model.Vehicle;
 
 public interface  FuelDataDAO {
     //create
@@ -13,8 +15,8 @@ public interface  FuelDataDAO {
     double getFuelEfficiencyStats(Long vehicleId);
 
     //update
-    void updateFuelData(FuelData fuelData);
-
+    FuelData updateFuelData(Long fuelId, Double litersUsed, Double distanceKm,LocalDateTime timestamp, Vehicle vehicle);
+    
     //delete
     void deleteFuelDataByFuelId(Long fuelId);
 }

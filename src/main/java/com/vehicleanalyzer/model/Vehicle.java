@@ -26,15 +26,15 @@ public class Vehicle {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Vehicle_Type")
-    private VehicleTypes Type ;
+    private VehicleTypes Type;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Engine_Type")
-    private EngineType Engine_Type ;
+    private EngineType Engine_Type;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Fuel_Type")
-    private FuelType Fuel_Type ;
+    private FuelType Fuel_Type;
 
     public Vehicle(String manufacturer, String model, int year_of_Mfg, VehicleTypes type, EngineType engine_Type,
             FuelType fuel_Type) {
@@ -97,7 +97,7 @@ public class Vehicle {
         Fuel_Type = fuel_Type;
     }
 
-    public Long getid() {
+    public Long getId() {
         return id;
     }
 
@@ -116,6 +116,8 @@ public class Vehicle {
         return sb.toString();
     }
 
-    
+    public void setId(Long id) {
+        this.id = id;
+    }
 
 }

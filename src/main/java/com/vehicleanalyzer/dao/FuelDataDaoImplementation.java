@@ -1,6 +1,8 @@
 package com.vehicleanalyzer.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Tuple;
@@ -10,6 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.vehicleanalyzer.model.FuelData;
+import com.vehicleanalyzer.model.Vehicle;
 import com.vehicleanalyzer.util.HibernateUtil;
 
 public class FuelDataDaoImplementation implements FuelDataDAO {
@@ -114,14 +117,43 @@ public class FuelDataDaoImplementation implements FuelDataDAO {
 
     }
 
+    private FuelData saveOrUpdateFuelData(FuelData fuelData) {
+        Objects.requireNonNull(fuelData, "FuelData cannot be null");
+
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            try {
+                FuelData merged = (FuelData) session.merge(fuelData);
+                tx.commit();
+                return merged;
+            } catch (Exception e) {
+                tx.rollback();
+                throw new RuntimeException("Failed to update FuelData ID: " + fuelData.getFuelId(), e);
+            }
+        }
+    }
+
+    
     @Override
-    public void updateFuelData(FuelData fuelData) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public FuelData updateFuelData(Long fuelId, Double litersUsed, Double distanceKm,LocalDateTime timestamp, Vehicle vehicle){
+        
+        Objects.requireNonNull(fuelId, "FuelData ID cannot be null");
+        FuelData existing = findById(fuelId);
+        if (existing == null) {
+            throw new EntityNotFoundException("Vehicle not found: " + fuelId);
+        }
+
+        if (litersUsed != null) existing.setLiters_used(litersUsed);
+        if (distanceKm != null) existing.setDistance_km(distanceKm);
+        if (timestamp != null) existing.setTimestamp(timestamp);
+        if (vehicle != null) existing.setVehicle(vehicle);
+
+        return saveOrUpdateFuelData(existing);
     }
 
     @Override
     public void deleteFuelDataByFuelId(Long fuelId) {
-            if (fuelId == null) {
+        if (fuelId == null) {
             throw new IllegalArgumentException("Fuel Id cannot be null");
         }
         try (Session session = sessionFactory.openSession()) {

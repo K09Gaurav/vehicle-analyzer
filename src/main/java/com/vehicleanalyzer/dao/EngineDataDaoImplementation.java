@@ -1,6 +1,9 @@
 package com.vehicleanalyzer.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
+import static java.util.Objects.requireNonNull;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -9,6 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.vehicleanalyzer.model.EngineData;
+import com.vehicleanalyzer.model.Vehicle;
 import com.vehicleanalyzer.util.HibernateUtil;
 
 public class EngineDataDaoImplementation implements EngineDataDAO {
@@ -134,9 +138,35 @@ public class EngineDataDaoImplementation implements EngineDataDAO {
 
     }
 
+
+    private EngineData saveOrUpdateEngineData(EngineData engineData) {
+    Objects.requireNonNull(engineData, "EngineData cannot be null");
+
+    try (Session session = sessionFactory.openSession()) {
+        Transaction tx = session.beginTransaction();
+        try {
+            EngineData merged = (EngineData) session.merge(engineData);
+            tx.commit();
+            return merged;
+        } catch (Exception e) {
+            tx.rollback();
+            throw new RuntimeException("Failed to update EngineData ID: " + engineData.getEngineId(), e);
+        }
+    }
+}
+
     @Override
-    public void updateEngineData(EngineData engineData) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public EngineData updateEngineData(Long engineId, Integer rpm, Double temperature,LocalDateTime timestamp, Vehicle vehicle) {
+        requireNonNull(engineId, "EngineData ID cannot be null");
+        EngineData existing = findById(engineId);
+        if (existing == null) throw new EntityNotFoundException("EngineData not found: " + engineId);
+
+        if (rpm != null) existing.setRPM(rpm);
+        if (temperature != null) existing.setTemperature(temperature);
+        if (timestamp != null) existing.setTimestamp(timestamp);
+        if (vehicle != null) existing.setVehicle(vehicle);
+
+       return saveOrUpdateEngineData(existing);
     }
 
     @Override

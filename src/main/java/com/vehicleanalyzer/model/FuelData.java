@@ -43,16 +43,12 @@ public class FuelData {
         return liters_used;
     }
 
-    public void setLiters_used(float liters_used) {
+    public void setLiters_used(double liters_used) {
         this.liters_used = liters_used;
     }
 
     public double getdistance_km() {
         return distance_km;
-    }
-
-    public void setdistance_km(float distance_km) {
-        this.distance_km = distance_km;
     }
 
     public LocalDateTime getTimestamp() {
@@ -71,6 +67,18 @@ public class FuelData {
     public String toString() {
         return "FuelData [fuelId=" + fuelId + ", vehicle=" + vehicle + ", liters_used=" + liters_used + ", distance_km="
                 + distance_km + ", timestamp=" + timestamp + "]";
+    }
+
+    public void setFuelId(Long fuelId) {
+        this.fuelId = fuelId;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public void setDistance_km(double distance_km) {
+        this.distance_km = distance_km;
     }
 
        
